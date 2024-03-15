@@ -1,0 +1,825 @@
+@font-face {
+font-family: "MountainsofChristmas"; 
+    src: url("../font/MountainsofChristmas-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+html, body {
+    size: 100%;
+    background-color: #01503d;
+    background-image: url(/assets/img/body.jpeg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+canvas {
+	display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.kalend {
+    width: 670px;
+    height: 800px;
+    position: sticky;
+    left: 55%;
+    top: 25%;
+    border-color: #23d5ab;
+    border-style: ridge;
+    border: 3px;
+    margin-top: 5%;  
+}
+
+.parent {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: repeat(9, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 10px;
+}
+    
+    .div1 { 
+        grid-area: 1 / 1 / 3 / 3; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 72px;
+        box-shadow: inset 0 0 1px #000;
+       
+    }
+    .div2 { 
+        grid-area: 1 / 3 / 2 / 4; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/2.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div3 { 
+        grid-area: 2 / 3 / 3 / 4;  
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/3.gif);
+        background-size: cover;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div4 { 
+        grid-area: 1 / 4 / 2 / 5; 
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/4.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div5 { 
+        grid-area: 2 / 4 / 4 / 5; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/5.gif);
+        background-size: cover;
+        background-position: center;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div6 { 
+        grid-area: 1 / 5 / 3 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/6.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div7 { 
+        grid-area: 1 / 6 / 2 / 7;
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/7.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div8 { 
+        grid-area: 2 / 6 / 5 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/8.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 106px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div9 { 
+        grid-area: 3 / 1 / 4 / 4;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/9.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div10 { 
+        grid-area: 3 / 5 / 4 / 6;
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/10.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div11 { 
+        grid-area: 4 / 1 / 5 / 2;
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/11.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div12 { 
+        grid-area: 4 / 2 / 6 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/12.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div13 { 
+        grid-area: 4 / 3 / 5 / 4;
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/23.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div14 { 
+        grid-area: 4 / 4 / 5 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/14.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div15 { 
+        grid-area: 5 / 1 / 6 / 2;
+        background-color: rgba(255, 255, 255, 1);
+        background-image: url(/assets/img/15.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        margin-top: 2px;
+        padding: 20px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div16 { 
+        grid-area: 5 / 3 / 7 / 5;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/13.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div17 { 
+        grid-area: 5 / 5 / 6 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/17.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div18 { 
+        grid-area: 5 / 6 / 7 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/18.avif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div19 { 
+        grid-area: 6 / 1 / 8 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/25.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 4px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div20 { 
+        grid-area: 6 / 5 / 8 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/20.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 2px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div21 { 
+        grid-area: 7 / 6 / 8 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/21.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 3px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div22 { 
+        grid-area: 8 / 1 / 10 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/22.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 5px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div23 { 
+        grid-area: 7 / 3 / 8 / 5;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/19.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 4px;
+        box-shadow: inset 0 0 1px #000;
+    }
+    .div24 { 
+        grid-area: 8 / 3 / 10 / 7; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url(/assets/img/16.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        margin-top: 5px;
+        box-shadow: inset 0 0 1px #000;
+    }
+
+.parent_2 {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: repeat(9, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 11px;
+    padding: 10px;
+    }
+    
+    .div1_2 { 
+        grid-area: 1 / 1 / 3 / 3; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div2_2 { 
+        grid-area: 1 / 3 / 2 / 4; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div3_2 { 
+        grid-area: 2 / 3 / 3 / 4;  
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div4_2 { 
+        grid-area: 1 / 4 / 2 / 5; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div5_2 { 
+        grid-area: 2 / 4 / 4 / 5; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div6_2 { 
+        grid-area: 1 / 5 / 3 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div7_2 { 
+        grid-area: 1 / 6 / 2 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div8_2 { 
+        grid-area: 2 / 6 / 5 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 106px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div9_2 { 
+        grid-area: 3 / 1 / 4 / 4;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div10_2 { 
+        grid-area: 3 / 5 / 4 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div11_2 { 
+        grid-area: 4 / 1 / 5 / 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div12_2 { 
+        grid-area: 4 / 2 / 6 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div13_2 { 
+        grid-area: 4 / 3 / 5 / 4;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div14_2 { 
+        grid-area: 4 / 4 / 5 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div15_2 { 
+        grid-area: 5 / 1 / 6 / 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div16_2 { 
+        grid-area: 5 / 3 / 7 / 5;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div17_2 { 
+        grid-area: 5 / 5 / 6 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div18_2 { 
+        grid-area: 5 / 6 / 7 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div19_2 { 
+        grid-area: 6 / 1 / 8 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div20_2 { 
+        grid-area: 6 / 5 / 8 / 6;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div21_2 { 
+        grid-area: 7 / 6 / 8 / 7;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div22_2 { 
+        grid-area: 8 / 1 / 10 / 3;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div23_2 { 
+        grid-area: 7 / 3 / 8 / 5;
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .div24_2 { 
+        grid-area: 8 / 3 / 10 / 7; 
+        background-color: rgba(255, 255, 255, 0.8);
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        animation: animate_gradient 5s ease infinite;
+        background-size: 400% 400%;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 60px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px #000;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+
+    @keyframes animate_gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+div span {
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    font-family: "MountainsofChristmas";
+    src: url(/GridJulkalenderMR04/assets/font/MountainsofChristmas-Bold.ttf);
+    font-size: 9vw; 
+    color: rgb(255, 238, 4);
+    flex: 50%;
+}  
+
+
+@media (max-width: 1350px) {
+    body {
+        background-size: cover;
+    }
+    .kalend {
+        margin-top: 15%;
+        margin-left: 20%;    
+    }
+    .kalend, div span {
+        flex: 100%;
+    }
+    div span {
+        top: 5%;
+        margin-left: 10%;
+    }
+}
+@media (max-width: 1050px) {
+    body {
+        background-size: cover;
+    }
+    .kalend {
+        margin-top: 20%;
+        margin-left: 10%;
+    }
+    .kalend, div span {
+        flex: 100%;
+    }
+    div span {
+        top: 5%;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        background-size: cover;
+    }
+    .kalend, div span {
+        flex: 100%;
+    }
+    div span {
+        top: 5%;
+        margin-left: 10%;
+    }
+    .kalend {
+        margin-top: 20%;
+        margin-left: 5%;
+    
+    }
+}
